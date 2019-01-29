@@ -7,14 +7,14 @@ import { Book } from '../../models/book.models';
 @Injectable()
 export class BookRestProvider {
 
-  private url:string="https://raw.githubusercontent.com/kesinee-bo/Images/master/cs_books.json";
+  private url:string="https://bookshop-k.herokuapp.com";
 
   constructor(public http: HttpClient) {
     console.log('Hello BookRestProvider Provider');
   }
 
   getbooksList():Observable<any>{
-    return this.http.get<Book>(this.url)
+    return this.http.get<Book>(this.url + '/books')
 
   }
 
